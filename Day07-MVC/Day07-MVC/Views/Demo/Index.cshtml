@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div>Họ tên: @ViewBag.HoTen</div>
+<div>Điện thoại: @ViewBag.DienThoai</div>
+<div>Điện thoại: @ViewData["DienThoai"]</div>
+<div>Ngày Sinh: @ViewData["Ngày Sinh"]</div>
+<div>Điện thoại: @ViewBag.DienThoai.MaHH - @ViewBag.DienThoai.TenHH</div>
+
+@{ 
+    var hh = ViewBag.DienThoai as HangHoa;
+}
+
+@if (hh != null)
+{
+    <div>Điện thoại: @hh.MaHH - @hh.TenHH - @hh.DonGia đồng!!!</div>
+}
