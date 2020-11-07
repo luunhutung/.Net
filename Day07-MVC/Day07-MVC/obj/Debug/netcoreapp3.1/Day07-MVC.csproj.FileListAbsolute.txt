@@ -400,3 +400,4 @@ C:\Users\NN\Desktop\DotNet\Day07-MVC\Day07-MVC\obj\Debug\netcoreapp3.1\Razor\Vie
 C:\Users\NN\Desktop\DotNet\Day07-MVC\Day07-MVC\obj\Debug\netcoreapp3.1\Razor\Views\Demo\ChiTiet.cshtml.g.cs
 C:\Users\NN\Desktop\DotNet\Day07-MVC\Day07-MVC\obj\Debug\netcoreapp3.1\Razor\Views\SinhVien\Index.cshtml.g.cs
 C:\Users\NN\Desktop\DotNet\Day07-MVC\Day07-MVC\bin\Debug\netcoreapp3.1\dataSinhVien.json
+C:\Users\NN\Desktop\DotNet\Day07-MVC\Day07-MVC\bin\Debug\netcoreapp3.1\Data\dataSinhVien.json

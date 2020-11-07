@@ -20,6 +20,7 @@ namespace Day07_MVC.Controllers
 
         private string fileJSOn = "dataSinhVien.json";
 
+        #region Ghi vào File
         [HttpPost]
         public IActionResult Manage(SinhVien sv, string GhiFile)
         {
@@ -52,5 +53,19 @@ namespace Day07_MVC.Controllers
 
             return View("Index");
         }
+        #endregion
+
+        #region Đọc từ File
+        public IActionResult DocJson()
+        {
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "Data", fileJSOn);
+
+            var content = System.IO.File.ReadAllText(path);
+
+            var sv = JsonConvert.DeserializeObject<SinhVien>(content);
+
+            return View("Index", sv);
+        }
+        #endregion
     }
 }
