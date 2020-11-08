@@ -72,7 +72,7 @@ namespace Day08WebApplication1.Controllers
                 {
                     MyFile.CopyTo(file);
                     ViewBag.ThongBao = "Upload thành công";
-                }    
+                }
             }
             else
                 ViewBag.ThongBao = "Upload thất bại";
@@ -109,27 +109,29 @@ namespace Day08WebApplication1.Controllers
         [HttpPost]
         public IActionResult ThemHangHoa(HangHoa hangHoa, IFormFile Hinh)
         {
-            if (Hinh != null)
+            if (ModelState.IsValid)
             {
-                var fileName = $"{DateTime.Now.Year}{DateTime.Now.Month}{DateTime.Now.Day}_{Hinh.FileName}";
-
-                var path = Path.Combine(Directory.GetCurrentDirectory(), "Image", fileName);
-
-                using (var file = new FileStream(path, FileMode.Create))
+                if (Hinh != null)
                 {
-                    Hinh.CopyTo(file);
+                    var fileName = $"{DateTime.Now.Year}{DateTime.Now.Month}{DateTime.Now.Day}_{Hinh.FileName}";
+
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "Image", fileName);
+
+                    using (var file = new FileStream(path, FileMode.Create))
+                    {
+                        Hinh.CopyTo(file);
+                    }
+                    hangHoa.Hinh = fileName;
+
+                    var jsonContent = JsonConvert.SerializeObject(hangHoa);
+
+                    var jsonPath = Path.Combine(Directory.GetCurrentDirectory(), "Data", $"{hangHoa.MaHH}.json");
+
+                    System.IO.File.WriteAllText(jsonPath, jsonContent);
                 }
-                hangHoa.Hinh = fileName;
-
-                var jsonContent = JsonConvert.SerializeObject(hangHoa);
-
-                var jsonPath = Path.Combine(Directory.GetCurrentDirectory(), "Data", $"{hangHoa.MaHH}.json");
-
-                System.IO.File.WriteAllText(jsonPath, jsonContent);
             }
-            
             return View("ThemHangHoa");
         }
-        #endregion
     }
+    #endregion
 }
