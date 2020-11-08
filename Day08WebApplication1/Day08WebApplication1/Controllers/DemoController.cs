@@ -8,6 +8,7 @@ using Day08WebApplication1.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging;
+using Newtonsoft.Json;
 
 namespace Day08WebApplication1.Controllers
 {
@@ -50,6 +51,10 @@ namespace Day08WebApplication1.Controllers
         #endregion
 
         public IActionResult Upload()
+        {
+            return View();
+        }
+        public IActionResult ThemHangHoa()
         {
             return View();
         }
@@ -97,6 +102,33 @@ namespace Day08WebApplication1.Controllers
                 ViewBag.ThongBao = "Upload thất bại";
 
             return View("Upload");
+        }
+        #endregion
+
+        #region Thêm hàng hóa và lưu thành file Json
+        [HttpPost]
+        public IActionResult ThemHangHoa(HangHoa hangHoa, IFormFile Hinh)
+        {
+            if (Hinh != null)
+            {
+                var fileName = $"{DateTime.Now.Year}{DateTime.Now.Month}{DateTime.Now.Day}_{Hinh.FileName}";
+
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "Image", fileName);
+
+                using (var file = new FileStream(path, FileMode.Create))
+                {
+                    Hinh.CopyTo(file);
+                }
+                hangHoa.Hinh = fileName;
+
+                var jsonContent = JsonConvert.SerializeObject(hangHoa);
+
+                var jsonPath = Path.Combine(Directory.GetCurrentDirectory(), "Data", $"{hangHoa.MaHH}.json");
+
+                System.IO.File.WriteAllText(jsonPath, jsonContent);
+            }
+            
+            return View("ThemHangHoa");
         }
         #endregion
     }

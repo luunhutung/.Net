@@ -395,3 +395,6 @@ C:\Users\NN\Desktop\GitHub\.Net\Day08WebApplication1\Day08WebApplication1\obj\De
 C:\Users\NN\Desktop\GitHub\.Net\Day08WebApplication1\Day08WebApplication1\obj\Debug\netcoreapp3.1\Day08WebApplication1.pdb
 C:\Users\NN\Desktop\GitHub\.Net\Day08WebApplication1\Day08WebApplication1\obj\Debug\netcoreapp3.1\Day08WebApplication1.genruntimeconfig.cache
 C:\Users\NN\Desktop\GitHub\.Net\Day08WebApplication1\Day08WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Demo\Upload.cshtml.g.cs
+C:\Users\NN\Desktop\GitHub\.Net\Day08WebApplication1\Day08WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Demo\ThemHangHoa.cshtml.g.cs
+C:\Users\NN\Desktop\GitHub\.Net\Day08WebApplication1\Day08WebApplication1\bin\Debug\netcoreapp3.1\Data\1.json
+C:\Users\NN\Desktop\GitHub\.Net\Day08WebApplication1\Day08WebApplication1\bin\Debug\netcoreapp3.1\Data\0.json
