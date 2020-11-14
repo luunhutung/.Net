@@ -96,7 +96,10 @@
                     Email: { required: true, email: true },
                     XacNhanEmail: { equalTo: 'input[name="Email"]' },
                     SoTaiKhoan: { creditcard: true },
-                    Hinh: { extension: "png|jpg|jpeg" }
+                    Hinh: { extension: "png|jpg|jpeg" },
+                    Diem: { number: true, range: [0, 10] },
+                    HeSo: { digits: true, min: 1 },
+                    ThongTinThem: { maxlength: 255 }
                 }
             });
         });
