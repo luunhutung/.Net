@@ -6,7 +6,7 @@ namespace Day15_EFCore.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            var sqlInsertData = @"INSERT INTO Loai(TenLoai, MoTa) VALUES (N'Bia', N'Bia), (N'Nước ngọt', N'Nước ngọt')";
+            var sqlInsertData = @"INSERT INTO Loai(TenLoai, MoTa) VALUES (N'Bia', N'Bia'), (N'Nước ngọt', N'Nước ngọt')";
             migrationBuilder.Sql(sqlInsertData);
         }
 
